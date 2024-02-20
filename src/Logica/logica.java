@@ -4,8 +4,6 @@
  */
 package Logica;
 
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Stack;
 
 /**
@@ -14,13 +12,12 @@ import java.util.Stack;
  */
 public class logica {
     private Pila p;
-    private Cola Q;
+    private Cola cola;
     private Stack<Integer> pik = new Stack<Integer>();
-    private Queue<String> cola = new LinkedList<String>();
-
+   
     public logica(){
         p = new Pila();
-        Q = new Cola();
+        cola = new Cola();
     }
 
     private boolean esOperador(String c){
@@ -91,12 +88,13 @@ public class logica {
     }
     
     public int value(String c){
-        cola = new LinkedList<String>();
+        
+        cola = new Cola();
         String n = "";
 
         for(int i = 0; i < c.length(); i++){
             if(c.charAt(i) == '|'){
-                cola.offer(n);
+                cola.queue(n);
                 n = "";
             }else{
                 n = n + c.charAt(i);
@@ -104,7 +102,7 @@ public class logica {
         }
        
         while(!cola.isEmpty()){
-            n = cola.remove();
+            n = cola.dequeue();
             
             if(!esOperador(n)){
                pik.push(Integer.parseInt(n));
