@@ -6,6 +6,7 @@ package Logica;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 /**
  *
@@ -14,7 +15,7 @@ import java.util.Queue;
 public class logica {
     private Pila p;
     private Cola Q;
-    
+    private Stack<Integer> pik = new Stack<Integer>();
     private Queue<String> cola = new LinkedList<String>();
 
     public logica(){
@@ -22,8 +23,8 @@ public class logica {
         Q = new Cola();
     }
 
-    private boolean esOperador(char c){
-        return c == '+' || c == '-' || c == '*' || c == '/';
+    private boolean esOperador(String c){
+        return c.equals("+") || c.equals("-") || c.equals("*") || c.equals("/");
     }
 
     private int precedencia(char c){

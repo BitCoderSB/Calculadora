@@ -30,106 +30,116 @@ public class CalculadoraController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        System.out.println("Perra");
     }    
 
    @FXML
     private void c7(ActionEvent event) {
-        if(t1.getText() != "0"){
-            String n = t1.getText();
+        String n = t1.getText();
+        
+        if(n.equals("0")){
+            t1.setText("7");
+        }else{
             n = n + "7";
             t1.setText(n);
-        }else{
-            t1.setText("7");
         }
        
     }
 
     @FXML
     private void c8(ActionEvent event) {
-        if(t1.getText() != "0"){
-            String n = t1.getText();
+        String n = t1.getText();
+        
+        if(n.equals("0")){
+            t1.setText("8");
+        }else{
             n = n + "8";
             t1.setText(n);
-        }else{
-            t1.setText("8");
         }
     }
 
     @FXML
     private void c9(ActionEvent event) {
-        if(t1.getText() != "0"){
-            String n = t1.getText();
+        String n = t1.getText();
+        
+        if(n.equals("0")){
+            t1.setText("9");
+        }else{
             n = n + "9";
             t1.setText(n);
-        }else{
-            t1.setText("9");
         }
     }
 
     @FXML
     private void c4(ActionEvent event) {
-        if(t1.getText() != "0"){
-            String n = t1.getText();
+        String n = t1.getText();
+        
+        if(n.equals("0")){
+            t1.setText("4");
+        }else{
             n = n + "4";
             t1.setText(n);
-        }else{
-            t1.setText("4");
         }
     }
 
     @FXML
     private void c5(ActionEvent event) {
-        if(t1.getText() != "0"){
-            String n = t1.getText();
+        String n = t1.getText();
+        
+        if(n.equals("0")){
+            t1.setText("5");
+        }else{
             n = n + "5";
             t1.setText(n);
-        }else{
-            t1.setText("5");
         }
     }
 
     @FXML
     private void c6(ActionEvent event) {
-        if(t1.getText() != "0"){
-            String n = t1.getText();
+        String n = t1.getText();
+        
+        if(n.equals("0")){
+            t1.setText("6");
+        }else{
             n = n + "6";
             t1.setText(n);
-        }else{
-            t1.setText("6");
         }
     }
 
     @FXML
     private void c1(ActionEvent event) {
-        if(t1.getText() != "0"){
-            String n = t1.getText();
+        String n = t1.getText();
+        
+        if(n.equals("0")){
+            t1.setText("1");
+        }else{
             n = n + "1";
             t1.setText(n);
-        }else{
-            t1.setText("1");
         }
     }
 
     @FXML
     private void c2(ActionEvent event) {
-        if(t1.getText() != "0"){
-            String n = t1.getText();
+        String n = t1.getText();
+        
+        if(n.equals("0")){
+            t1.setText("2");
+        }else{
             n = n + "2";
             t1.setText(n);
-        }else{
-            t1.setText("2");
         }
         
     }
 
     @FXML
     private void c3(ActionEvent event) {
-        if(t1.getText() != "0"){
-            String n = t1.getText();
+        String n = t1.getText();
+        
+        if(n.equals("0")){
+            t1.setText("3");
+        }else{
             n = n + "3";
             t1.setText(n);
-        }else{
-            t1.setText("3");
         }
     }
 
@@ -140,17 +150,27 @@ public class CalculadoraController implements Initializable {
 
     @FXML
     private void c0(ActionEvent event) {
-        if(t1.getText() != "0"){
-            String n = t1.getText();
+        String n = t1.getText();
+        
+        if(n.equals("0")){
+            t1.setText("0");
+        }else{
             n = n + "0";
             t1.setText(n);
-        }else{
-            t1.setText("0");
         }
     }
 
     @FXML
     private void c_igual(ActionEvent event) {
+        logica l = new logica();
+        
+        
+        String n = t1.getText();
+        
+        t2.setText(l.filtrar(l.convert(n)));
+        
+        l.separar(l.convert(n));
+        
         
     }
 
