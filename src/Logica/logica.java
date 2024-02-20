@@ -90,7 +90,7 @@ public class logica {
         return resultado;
     }
     
-    public void separar(String c){
+    public int value(String c){
         cola = new LinkedList<String>();
         String n = "";
 
@@ -135,7 +135,7 @@ public class logica {
             }
         }
         
-        System.out.println(pik.pop());
+        return pik.pop();
         
     }
 

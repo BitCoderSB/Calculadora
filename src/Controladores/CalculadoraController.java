@@ -23,6 +23,8 @@ public class CalculadoraController implements Initializable {
     private TextField t1;
     @FXML
     private TextField t2;
+    @FXML
+    private TextField t3;
 
     /**
      * Initializes the controller class.
@@ -169,9 +171,9 @@ public class CalculadoraController implements Initializable {
         
         t2.setText(l.filtrar(l.convert(n)));
         
-        l.separar(l.convert(n));
+        int resultado = l.value(l.convert(n));
         
-        
+        t3.setText(String.valueOf(resultado));
     }
 
     @FXML
