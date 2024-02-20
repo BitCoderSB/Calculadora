@@ -4,8 +4,6 @@
  */
 package Logica;
 
-import java.util.Stack;
-
 /**
  *
  * @author Carlos
@@ -13,11 +11,12 @@ import java.util.Stack;
 public class logica {
     private Pila p;
     private Cola cola;
-    private Stack<Integer> pik = new Stack<Integer>();
+    private Pila2 pik;
    
     public logica(){
         p = new Pila();
         cola = new Cola();
+        pik = new Pila2();
     }
 
     private boolean esOperador(String c){

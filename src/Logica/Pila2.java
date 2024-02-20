@@ -10,35 +10,35 @@ import java.util.ArrayList;
  *
  * @author Carlos
  */
-class Node2 {
-    
-    char data;
-    Node2 next;
 
-    public Node2(char dato){
+class Node {
+    
+    int data;
+    Node next;
+
+    public Node(int dato){
         this.data = dato;
         this.next = null;
         
     }
     
-    public Node2(){
-        this('0');
+    public Node(){
+        this(0);
     }
-    
+
 }
 
 
+public class Pila2 {
 
-public class Pila {
+    private Node Tope;
 
-    private Node2 Tope;
-
-    public Pila(){
+    public Pila2(){
         Tope = null; 
     }
 
-    public void push(char data){
-        Node2 P = new Node2(data);
+    public void push(int data){
+        Node P = new Node(data);
         if(isEmpty()){
             Tope = P;
             return;
@@ -49,21 +49,21 @@ public class Pila {
 
     }
 
-    public char pop(){
+    public int pop(){
         
         if(isEmpty()){
-            return '\0';
+            return -1;
         }
 
-        Node2 P = Tope;
+        Node P = Tope;
         Tope = Tope.next;
         
         return P.data;
     }
 
-    public char peek(){
+    public int peek(){
         if(isEmpty()){
-            return '\0';
+            return -1;
         }
         return Tope.data;
     }
@@ -71,11 +71,11 @@ public class Pila {
     public boolean isEmpty(){
         return Tope == null;
     }
-
+    
     public void mostrar(){
 
-        ArrayList<Node2> list = new ArrayList<>();
-        Node2 P;
+        ArrayList<Node> list = new ArrayList<>();
+        Node P;
 
         for(P = Tope; P != null; P = P.next){
             list.add(P);

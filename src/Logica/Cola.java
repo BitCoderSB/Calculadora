@@ -8,18 +8,18 @@ package Logica;
  *
  * @author Carlos
  */
-class Node {
+class Node1 {
     
     String data;
-    Node next;
+    Node1 next;
 
-    public Node(String dato){
+    public Node1(String dato){
         this.data = dato;
         this.next = null;
         
     }
     
-    public Node(){
+    public Node1(){
         this("0");
     }
     
@@ -27,8 +27,8 @@ class Node {
 
 public class Cola {
 
-    private Node Frente;
-    private Node Fondo;
+    private Node1 Frente;
+    private Node1 Fondo;
 
     public Cola(){
         Frente = null;
@@ -40,7 +40,7 @@ public class Cola {
     }
 
     public void queue(String data){
-        Node P = new Node(data);
+        Node1 P = new Node1(data);
 
         if(isEmpty()){
             Frente = P;
@@ -59,7 +59,7 @@ public class Cola {
             return "";
         }
 
-        Node P = Frente;
+        Node1 P = Frente;
         Frente = Frente.next;
         
         return P.data;
