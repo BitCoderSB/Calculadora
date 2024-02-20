@@ -5,9 +5,8 @@
         <group>
             <file>file:/C:/Users/Carlos/Documents/NetBeansProjects/Calculadora/src/Logica/logica.java</file>
             <file>file:/C:/Users/Carlos/Documents/NetBeansProjects/Calculadora/src/Controladores/main.java</file>
-            <file>file:/C:/Users/Carlos/Documents/NetBeansProjects/Calculadora/src/Logica/Pila.java</file>
-            <file>file:/C:/Users/Carlos/Documents/NetBeansProjects/Calculadora/src/Logica/Cola.java</file>
             <file>file:/C:/Users/Carlos/Documents/NetBeansProjects/Calculadora/src/Controladores/CalculadoraController.java</file>
+            <file>file:/C:/Users/Carlos/Documents/NetBeansProjects/Calculadora/src/Ventanas/calculadora.fxml</file>
         </group>
     </open-files>
 </project-private>
