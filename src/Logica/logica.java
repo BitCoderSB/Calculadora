@@ -104,8 +104,38 @@ public class logica {
         }
        
         while(!cola.isEmpty()){
-            System.out.println(cola.remove());
+            n = cola.remove();
+            
+            if(!esOperador(n)){
+               pik.push(Integer.parseInt(n));
+            }else{
+                int a = pik.pop();
+                int b = pik.pop();
+                int h = 0;
+                
+                switch(n){
+                    case "+":
+                        h = a + b;
+                        break;
+                        
+                    case "-":
+                        h = b - a;
+                        break;
+                        
+                    case "*":
+                        h = a * b;
+                        break;
+                        
+                    case "/":
+                        h = b / a;
+                        break;
+                }
+                
+                pik.push(h);
+            }
         }
+        
+        System.out.println(pik.pop());
         
     }
 

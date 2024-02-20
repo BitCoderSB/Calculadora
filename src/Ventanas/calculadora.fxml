@@ -6,7 +6,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="311.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.CalculadoraController">
    <children>
-      <TextField fx:id="t1" alignment="CENTER_RIGHT" editable="false" layoutX="29.0" layoutY="25.0" prefHeight="33.0" prefWidth="263.0" text="0" />
+      <TextField fx:id="t1" alignment="CENTER_RIGHT" layoutX="29.0" layoutY="25.0" prefHeight="33.0" prefWidth="263.0" text="0" />
       <TextField fx:id="t2" editable="false" layoutX="29.0" layoutY="70.0" prefHeight="33.0" prefWidth="263.0" />
       <Button layoutX="29.0" layoutY="119.0" mnemonicParsing="false" onAction="#c7" prefHeight="43.0" prefWidth="44.0" text="7" />
       <Button layoutX="98.0" layoutY="119.0" mnemonicParsing="false" onAction="#c8" prefHeight="43.0" prefWidth="44.0" text="8" />
