@@ -40,6 +40,10 @@ public class CalculadoraController implements Initializable {
         String n = l.convert(t1.getText());
         
         t2.setText(n);
+        
+        l.separar(n);
     }
+    
+    
     
 }

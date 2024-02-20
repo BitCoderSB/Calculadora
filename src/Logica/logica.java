@@ -4,6 +4,9 @@
  */
 package Logica;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  *
  * @author Carlos
@@ -11,6 +14,8 @@ package Logica;
 public class logica {
     private Pila p;
     private Cola Q;
+    
+    private Queue<String> cola = new LinkedList<String>();
 
     public logica(){
         p = new Pila();
@@ -83,5 +88,26 @@ public class logica {
         
         return resultado;
     }
+    
+    public void separar(String c){
+        cola = new LinkedList<String>();
+        String n = "";
+
+        for(int i = 0; i < c.length(); i++){
+            if(c.charAt(i) == '|'){
+                cola.offer(n);
+                n = "";
+            }else{
+                n = n + c.charAt(i);
+            }            
+        }
+       
+        while(!cola.isEmpty()){
+            System.out.println(cola.remove());
+        }
+        
+    }
+
+
 
 }
