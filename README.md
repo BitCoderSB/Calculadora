@@ -1,282 +1,194 @@
-<p align="center">
-  <img src="https://img.shields.io/badge/hackathon-Tiendas%203B-blue?style=for-the-badge" alt="Hackathon Tiendas 3B"/>
-  <img src="https://img.shields.io/badge/python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
-  <img src="https://img.shields.io/badge/react-18+-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/>
-  <img src="https://img.shields.io/badge/YOLOv8-seg-FF6F00?style=for-the-badge&logo=pytorch&logoColor=white" alt="YOLOv8"/>
-  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"/>
-</p>
+<div align="center">
 
-<h1 align="center">🏪 Anaquel Inteligente — Tiendas 3B</h1>
+# 🌦️ Skylikely
 
-<p align="center">
-  <b>Inventario en tiempo real con Visión por Computadora</b><br/>
-  Sistema que detecta el retiro y devolución de productos de un anaquel usando YOLOv8 segmentation,<br/>
-  actualiza el inventario al instante y lo visualiza en un dashboard interactivo con alertas y predicciones.
-</p>
+### *Redefining Climate Intelligence*
 
-<p align="center">
-  <a href="https://hackaton3b.com/reto-inventario.html">🔗 Página del reto</a>
-</p>
+[![NASA Space Apps 2025](https://img.shields.io/badge/NASA%20Space%20Apps-2025-blue?style=for-the-badge&logo=nasa&logoColor=white)](https://www.spaceappschallenge.org/2025/find-a-team/pixelstorm/?tab=project)
+[![Challenge](https://img.shields.io/badge/Challenge-Will%20It%20Rain%20On%20My%20Parade%3F-orange?style=for-the-badge)](https://www.spaceappschallenge.org/2025/challenges/will-it-rain-on-my-parade/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://skylikely-pixelstorm-o25i.onrender.com/)
+[![YouTube Demo](https://img.shields.io/badge/Demo%20Video-YouTube-red?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=-Xc54RX6Yvc)
+
+<br />
+
+*Transform decades of NASA Earth observation data into actionable climate intelligence.*
 
 ---
 
-## 📋 El Problema
+</div>
 
-En la operación diaria de Tiendas 3B, el inventario teórico (basado en ventas POS y reposiciones) **diverge del inventario físico real** en el anaquel. No hay visibilidad de lo que sucede entre el estante y la caja registradora: los quiebres de stock pasan desapercibidos hasta que un cliente se va sin comprar.
+## 📖 About
 
-## 💡 Nuestra Solución
+**Skylikely** is a probabilistic climate analysis platform built for the [NASA Space Apps Challenge 2025](https://www.spaceappschallenge.org/2025/) — Challenge: ***Will It Rain On My Parade?***
 
-Una cámara fija apunta al anaquel. Un modelo de **segmentación YOLOv8** entrenado con imágenes reales de los productos identifica y cuenta cada SKU frame a frame. Cuando detecta que un producto fue retirado (o devuelto), actualiza el inventario en tiempo real y notifica al dashboard vía **WebSocket**.
+Select any location on the globe and a date — Skylikely calculates the probability of experiencing extreme weather conditions (very hot, very wet, or very windy days) using **23 years of NASA historical data (2001–2024)**. Results are presented through an interactive dashboard combining 2D maps, a 3D globe, probability cards, and time-series charts.
 
-**Sin QR. Sin RFID. Sin sensores.** Solo visión por computadora.
+> Unlike short-term weather forecasts, Skylikely leverages historical climate distributions and statistical models to reveal the **likelihood** of extreme events at any point of the year.
 
----
+### Why it matters
 
-## ✨ Funcionalidades Principales
-
-| Módulo | Descripción |
-|--------|-------------|
-| 🎥 **Captura de Video** | Conexión RTSP / USB / video pregrabado con fallback automático |
-| 🧠 **Motor de Visión (YOLOv8-seg)** | Detección por instancia + conteo por slot + doble validación anti falsos positivos |
-| 📦 **Motor de Inventario** | Estado en tiempo real, decrementos/incrementos, alertas por umbral (20%) |
-| 🔌 **API Backend** | FastAPI REST + WebSocket (Socket.IO) para comunicación en tiempo real |
-| 📹 **Video Overlay** | Feed en vivo con bounding boxes, etiquetas, conteo y semáforo de stock |
-| 🔮 **Modelo Predictivo** | Estima cuándo se agotará cada SKU basándose en la velocidad de retiro |
-| 🔥 **Heatmap** | Mapa de calor del anaquel: qué zonas tienen mayor actividad |
-| 📝 **Narración Inteligente** | Genera mensajes automáticos sobre el estado del inventario |
-| 🎨 **Dashboard React** | Panel operativo y analítico en tiempo real |
+- 🌾 **Agriculture** — Plan planting and harvesting around historical weather patterns
+- ✈️ **Tourism & Events** — Choose dates with the lowest risk of adverse conditions
+- 🏗️ **Risk Management** — Anticipate extreme conditions to reduce economic losses
+- 📊 **Education & Research** — Democratize access to advanced climate analysis
 
 ---
 
-## 🏗️ Arquitectura
+## 🚀 Features
+
+| Feature | Description |
+|---------|-------------|
+| 🗺️ **Interactive 2D Map** | Leaflet + Mapbox GL with geocoder search |
+| 🌍 **Immersive 3D Globe** | Globe.gl + Three.js for spatial exploration |
+| 📊 **Probability Cards** | Clear probability indicators for heat, rain, and wind |
+| 📈 **Time-Series Charts** | Chart.js visualizations of climate patterns |
+| 🎯 **Flexible Area Selection** | Circle or polygon selection with real-time analysis |
+| ⚡ **Percentile Models** | Statistical models based on P10, P50, P90 and extreme value distributions |
+| 🎨 **Lottie Animations** | Weather-themed animated icons for intuitive UX |
+
+---
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+### Frontend
+![React](https://img.shields.io/badge/React_18-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite_5-646CFF?style=flat-square&logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![Zustand](https://img.shields.io/badge/Zustand-443E38?style=flat-square&logo=react&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white)
+![Mapbox](https://img.shields.io/badge/Mapbox_GL-000000?style=flat-square&logo=mapbox&logoColor=white)
+![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=flat-square&logo=chartdotjs&logoColor=white)
+![Three.js](https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=threedotjs&logoColor=white)
+
+### Backend
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
+![scikit--learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
+![xarray](https://img.shields.io/badge/xarray-E67E22?style=flat-square)
+
+### Deployment
+![Render](https://img.shields.io/badge/Render-46E3B7?style=flat-square&logo=render&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Gunicorn](https://img.shields.io/badge/Gunicorn-499848?style=flat-square&logo=gunicorn&logoColor=white)
+
+</div>
+
+---
+
+## 🏗️ Architecture
 
 ```
-┌──────────────┐                      ┌──────────────────────────┐
-│  📷 Cámara   │──── frames ────────▶ │     Backend (Python)     │
-│  RTSP / USB  │                      │                          │
-└──────────────┘                      │  ┌────────────────────┐  │
-                                      │  │ YOLOv8-seg         │  │  Detección + Conteo
-                                      │  │ Motor de Visión    │  │
-                                      │  └─────────┬──────────┘  │
-                                      │            │             │
-                                      │  ┌─────────▼──────────┐  │
-                                      │  │ Motor de           │  │  Inventario + Alertas
-                                      │  │ Inventario         │  │
-                                      │  └─────────┬──────────┘  │
-                                      │            │             │
-                                      │  ┌─────────▼──────────┐  │
-                                      │  │ Predicción         │  │  Agotamiento estimado
-                                      │  │ Heatmap            │  │  Mapa de actividad
-                                      │  │ Narración          │  │  Mensajes automáticos
-                                      │  └─────────┬──────────┘  │
-                                      │            │             │
-                                      │  ┌─────────▼──────────┐  │
-                                      │  │ FastAPI + Socket.IO │  │  REST + WebSocket
-                                      │  └─────────┬──────────┘  │
-                                      └────────────┼─────────────┘
-                                                   │
-                                      ┌────────────▼─────────────┐
-                                      │   🎨 Dashboard (React)   │
-                                      │   Vite + TailwindCSS     │
-                                      │   Recharts + Socket.IO   │
-                                      └──────────────────────────┘
+skylikely-pixelstorm/
+├── frontend/                     # React 18 + Vite SPA
+│   ├── src/
+│   │   ├── components/           # UI components (maps, charts, cards)
+│   │   │   ├── pages/            # WelcomePage, ParameterSelection, Results
+│   │   │   └── ui/               # Reusable UI elements (Lottie, Glow, etc.)
+│   │   ├── lib/                  # Utilities (math, mapping, fetch)
+│   │   └── store/                # Zustand global state
+│   └── public/                   # Static data, animations, tiles
+│
+├── clima-prob-backend/           # Python backend
+│   ├── api/
+│   │   ├── app/
+│   │   │   ├── nasa/             # NASA data ingestion (GLDAS, IMERG, Giovanni)
+│   │   │   ├── prob/             # Probability engine (logistic, empirical, thresholds)
+│   │   │   ├── routes/           # FastAPI endpoint definitions
+│   │   │   └── config/           # Environment & settings
+│   │   └── tests/                # API & health tests
+│   └── notebooks/                # Exploratory data analysis
+│
+└── render.yml                    # Render deployment config
 ```
 
 ---
 
-## 🛒 Productos del Anaquel
+## 📡 NASA Data Sources
 
-El sistema detecta y monitorea **7 productos reales** de marcas propias de Tiendas 3B:
+| Dataset | Description | Resolution |
+|---------|-------------|------------|
+| [GLDAS Noah](https://disc.gsfc.nasa.gov/datasets/GLDAS_NOAH025_3H_2.1/summary) | Land surface temperature & wind | 3-hourly, 0.25° |
+| [GPM IMERG](https://disc.gsfc.nasa.gov/datasets/GPM_3IMERGDF_07/summary) | Global precipitation | Daily, 0.1° |
+| [MERRA-2](https://disc.gsfc.nasa.gov/datasets/M2T1NXSLV_V5.12.4/summary) | Atmospheric reanalysis | Hourly, 0.5° × 0.625° |
+| [Giovanni](https://www.earthdata.nasa.gov/learn/find-data/giovanni) | Data visualization & analysis API | Variable |
 
-| # | Producto | Presentación | Categoría |
-|---|----------|-------------|-----------|
-| 0 | 💧 Agua Natural Burst | 1500 ml | Water |
-| 1 | ⚡ Bebida Energética Red Burst | 473 ml | Beverages |
-| 2 | ⚡ Bebida Energética Original Burst Energy | 600 ml | Beverages |
-| 3 | 🌽 Nachos Con Sal Naturasol | 200 gr | Snacks |
-| 4 | 🥭 Bebida Mango-Durazno Nebraska | 460 ml | Beverages |
-| 5 | 🥤 Refresco Cola Sin Azúcar Sisi | 355 ml | Beverages |
-| 6 | 🍊 Bebida Naranja Sun Paradise | 900 ml | Beverages |
+All data is accessed through [NASA Earthdata](https://urs.earthdata.nasa.gov/) and the [earthaccess](https://github.com/nsidc/earthaccess) Python library.
 
 ---
 
-## 🖥️ Dashboard
+## ⚡ Getting Started
 
-El dashboard cuenta con 4 vistas principales:
+### Prerequisites
 
-| Vista | Descripción |
-|-------|-------------|
-| **📊 Panel en Vivo** | Video feed con overlay + stock en tiempo real + log de eventos + predicciones |
-| **📦 Catálogo de Productos** | Detalle de cada SKU con métricas e información del producto |
-| **📈 Analítica** | Gráficas de tendencia de stock, heatmap del anaquel, métricas de rendimiento |
-| **📋 Actividad** | Timeline completo de eventos con filtros |
+- **Node.js** >= 18
+- **Python** >= 3.10
+- **NASA Earthdata account** — [Register here](https://urs.earthdata.nasa.gov/users/new)
 
----
-
-## 🚀 Inicio Rápido
-
-### Prerrequisitos
-
-- **Python** 3.11+
-- **Node.js** 18+
-- **Git**
-
-### 1. Clonar el repositorio
+### Backend
 
 ```bash
-git clone https://github.com/BitCoderSB/3BHackathon.git
-cd 3BHackathon
+cd clima-prob-backend
+conda env create -f environment.yml
+conda activate clima-prob
+
+# Configure environment
+cp api/.env.example api/.env
+# Add your EARTHDATA_USERNAME and EARTHDATA_PASSWORD
+
+# Run
+cd api
+uvicorn app.main:app --reload
 ```
 
-### 2. Backend
-
-```bash
-cd backend
-python -m venv venv
-
-# Windows
-venv\Scripts\activate
-# Linux / macOS
-source venv/bin/activate
-
-pip install -r requirements.txt
-```
-
-### 3. Frontend
+### Frontend
 
 ```bash
 cd frontend
 npm install
-```
 
-### 4. Ejecutar
+# Configure environment
+cp .env.example .env
+# Add your API URL and Mapbox token
 
-**Backend** (terminal 1):
-```bash
-cd backend
-python main.py
-```
-
-**Frontend** (terminal 2):
-```bash
-cd frontend
+# Run
 npm run dev
 ```
 
-El dashboard estará disponible en `http://localhost:5173` y el backend en `http://localhost:8000`.
+---
+
+## 👥 Team PixelStorm
+
+<div align="center">
+
+| | Name | Location |
+|---|------|----------|
+| 👑 | **Antonio Zempoaltecatl Navarro** | Puebla, Mexico |
+| 🧑‍💻 | **Luis Alberto González Muñoz** | Puebla, Mexico |
+| 🧑‍💻 | **Aldair Iglesias Hernández** | Puebla, Mexico |
+| 🧑‍💻 | **Carlos Alberto Sánchez Bonilla** | Puebla, Mexico |
+
+</div>
+
+> 📍 **Local Event:** Puebla, Mexico &nbsp;|&nbsp; 🏆 **NASA Space Apps Challenge 2025**
 
 ---
 
-## 🧪 Entrenamiento del Modelo
+## 📄 License
 
-El dataset incluye **71 imágenes etiquetadas** del anaquel real con anotaciones YOLO en formato polígono (segmentación).
-
-```bash
-cd backend
-python train_model.py
-```
-
-Los modelos entrenados se guardan en `models/` y `runs/`.
+This project was created for the [NASA Space Apps Challenge 2025](https://www.spaceappschallenge.org/2025/).
 
 ---
 
-## 📁 Estructura del Proyecto
+<div align="center">
 
-```
-3BHackathon/
-├── 📂 assets/                    # Insumos del hackathon
-│   ├── images/                   # 71 imágenes etiquetadas del anaquel
-│   ├── labels/                   # Labels YOLO (polígono/segmentación)
-│   ├── classes.txt               # 7 clases de productos
-│   ├── productosdelanaquel.md    # Catálogo JSON de productos
-│   └── Hackaton-datos_productos.csv
-│
-├── 📂 backend/                   # Python: FastAPI + CV + Lógica
-│   ├── main.py                   # Servidor principal (FastAPI + Socket.IO)
-│   ├── camera_capture.py         # M1: Captura de video
-│   ├── detection_engine.py       # M2: Motor YOLOv8-seg
-│   ├── inventory_engine.py       # M3: Motor de inventario
-│   ├── prediction_engine.py      # M6: Modelo predictivo
-│   ├── heatmap_engine.py         # M7: Heatmap de actividad
-│   ├── narrative_engine.py       # M8: Narración inteligente
-│   ├── video_overlay.py          # M5: Video con overlay
-│   ├── contracts.py              # Contratos/tipos compartidos
-│   └── train_model.py            # Script de entrenamiento YOLO
-│
-├── 📂 frontend/                  # React: Dashboard
-│   └── src/
-│       ├── App.tsx               # Router principal
-│       ├── components/           # Layout, Sidebar, VideoFeed
-│       ├── pages/                # LivePanel, ProductCatalog, Analytics, Activity
-│       ├── hooks/                # useSocket (conexión WebSocket)
-│       └── types/                # Interfaces TypeScript
-│
-├── 📂 models/                    # Modelos YOLO entrenados (.pt)
-├── 📂 runs/                      # Resultados de entrenamientos
-└── 📂 scripts/                   # Scripts de setup
-```
+**[Live Demo](https://skylikely-pixelstorm-o25i.onrender.com/)** · **[Video Demo](https://www.youtube.com/watch?v=-Xc54RX6Yvc)** · **[Challenge Page](https://www.spaceappschallenge.org/2025/find-a-team/pixelstorm/?tab=project)**
 
----
+<br />
 
-## 🛠️ Stack Tecnológico
+*Built with ❤️ and NASA data by Team PixelStorm*
 
-<table>
-  <tr>
-    <th>Capa</th>
-    <th>Tecnología</th>
-  </tr>
-  <tr>
-    <td><b>CV / IA</b></td>
-    <td>Ultralytics YOLOv8-seg · OpenCV · NumPy</td>
-  </tr>
-  <tr>
-    <td><b>Backend</b></td>
-    <td>Python 3.11 · FastAPI · Uvicorn · python-socketio</td>
-  </tr>
-  <tr>
-    <td><b>Frontend</b></td>
-    <td>React 18 · TypeScript · Vite · TailwindCSS · Recharts · Socket.IO Client</td>
-  </tr>
-  <tr>
-    <td><b>Comunicación</b></td>
-    <td>WebSocket (Socket.IO) para tiempo real · REST para consultas</td>
-  </tr>
-  <tr>
-    <td><b>Datos</b></td>
-    <td>En memoria (optimizado para velocidad en demo)</td>
-  </tr>
-</table>
-
----
-
-## 🎯 Criterios de Evaluación del Hackathon
-
-| Criterio | Peso |
-|----------|------|
-| Funcionalidad (precisión y estabilidad) | **40%** |
-| Simplicidad e Innovación | **30%** |
-| UI/UX (Dashboard) | **20%** |
-| Pitch | **10%** |
-
----
-
-## 🔑 Diferenciadores Clave
-
-- **🔮 Predicción de desabasto** — No solo muestra el estado actual, sino cuándo se agotará cada producto al ritmo de retiro observado.
-- **🔥 Heatmap de actividad** — Visualiza qué zonas del anaquel tienen mayor demanda.
-- **🔄 Detección bidireccional** — Detecta tanto retiros como devoluciones de productos.
-- **📝 Narración inteligente** — El sistema genera mensajes descriptivos automáticos sobre el estado del inventario.
-- **📹 Video con overlay aumentado** — Feed en vivo con bounding boxes, conteo y semáforo visual directamente sobre el anaquel.
-- **🛡️ Anti falsos positivos** — Doble validación + cooldown para asegurar precisión en la detección.
-
----
-
-## 👥 Equipo
-
-Proyecto desarrollado para el **Hackathon Tiendas 3B 2026**.
-
----
-
-<p align="center">
-  <sub>Hecho con ❤️ para el Hackathon Tiendas 3B 2026</sub>
-</p>
+</div>
